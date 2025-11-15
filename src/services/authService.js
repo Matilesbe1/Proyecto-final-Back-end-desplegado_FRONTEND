@@ -10,7 +10,7 @@ export async function register(username, email, password) {
 
         //Fetch es una funcion nativa de JS para hacer consultas HTTP
         const response_http = await fetch(
-            'http://localhost:8080/api/auth/register',
+            ENVIRONMENT.URL_API + '/api/auth/register',
             {
                 method: 'POST',
                 headers: {
@@ -39,7 +39,7 @@ export async function login(email, password) {
             password
         }
 
-        const http_response = await fetch("http://localhost:8080/api/auth/login", {
+        const http_response = await fetch(ENVIRONMENT.URL_API + '/api/auth/login', {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
