@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { getWorkspaces } from '../../services/workspaceService.js'
 import useFetch from '../../hooks/useFetch.jsx'
 import { Link } from 'react-router'
+import './HomeScreen.css'
 
 const HomeScreen = () => {
 
@@ -15,12 +16,12 @@ const HomeScreen = () => {
   }, [])
   console.log(response, loading, error)
   return (
-    <div>
-      <h1>Lista de espacios de trabajo</h1>
+    <div className='list-workspace-container'>
+      <h1 className='list-workspace-title'>Lista de espacios de trabajo</h1>
       {
         loading
         ? <span>Cargando...</span>
-        : <div>
+        : <div className='list-workspace-workspaces-container'>
           {
           response 
           && 
@@ -28,9 +29,9 @@ const HomeScreen = () => {
             (workspace) => {
               
               return (
-                <div>
-                  <h2>{workspace.workspace_name}</h2>
-                  <Link to={'/workspace/' + workspace.workspace_id}>Abrir workspace</Link>
+                <div className='list-workspace-workspaces'>
+                  <h2><i class="bi bi-suitcase-lg-fill"></i>{workspace.workspace_name}</h2>
+                  <Link to={'/workspace/' + workspace.workspace_id} className='button-workspace'><span className='button-content'>Select</span></Link>
                   
                 </div>
               )
