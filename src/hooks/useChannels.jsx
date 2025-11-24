@@ -39,7 +39,7 @@ function useChannels (){
     )
 
     //Para que esto funcione correctamente, es importante que el backend siempre responda con la misma firma
-    useEffect(
+    /* useEffect(
         () => {
             if(response && response.ok){
                 //Porque si se actualiza la ultima respuesta del servidor, quiero que se actulice mi estado
@@ -47,7 +47,7 @@ function useChannels (){
             }
         },
         [response]
-    )
+    ) */
     return {
         loading,
         response,

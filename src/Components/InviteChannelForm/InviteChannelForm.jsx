@@ -9,7 +9,6 @@ const InviteChannelForm = ({ onSubmit }) => {
     const new_channel_form_fields = {
         channel_name: 'channel_name'
     }
-    const { channels, handlecreateChannel } = useChannels()
 
     const initial_new_channel_state = {
         [new_channel_form_fields.channel_name]: ''  //esta vacio

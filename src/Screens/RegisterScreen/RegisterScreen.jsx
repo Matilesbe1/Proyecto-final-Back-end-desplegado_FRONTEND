@@ -102,7 +102,7 @@ const RegisterScreen = () => {
                 <form className="form" onSubmit={handleSubmit}>
                     <p className="title">Registro </p>
                     <p className="message">Regístrate ahora para comenzar</p>
-                    <div className="flex form-field">
+                    <div className=" form-field">
                         <label className='name-input' htmlFor="username">
                             <input className="input"
                                 type="text"
@@ -128,7 +128,7 @@ const RegisterScreen = () => {
                             <span>Email:</span>
                         </label>
                     </div>
-                    <div className='form-field'>
+                    <div className=' form-field'>
                         <label className='name-input' htmlFor="password">
                             <input className="input"
                                 type="password"
@@ -146,8 +146,8 @@ const RegisterScreen = () => {
                     {response && <span style={{ color: 'green' }}> Usuario registrado con exito! </span>}
                     {
                         loading
-                            ? <button disabled className='submit'>Registrando</button>
-                            : <button className='submit'>Registrarse</button>
+                            ? <button disabled className='login-submit'>Registrando</button>
+                            : <button className='login-submit'>Registrarse</button>
                     }
                     <p className="signin">Ya tienes una cuenta? <a href="./login">Iniciar sesión</a> </p>
                 </form>
