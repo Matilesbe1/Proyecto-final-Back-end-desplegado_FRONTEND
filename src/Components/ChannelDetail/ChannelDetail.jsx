@@ -8,7 +8,7 @@ import "./ChannelDetail.css"
 
 const ChannelDetail = ({ channel_list }) => {
     const { channel_id, workspace_id } = useParams();
-
+    
     if (!channel_id) {
         return (
             <div>
@@ -59,7 +59,7 @@ const ChannelDetail = ({ channel_list }) => {
      } */
 
     console.log(user_id);
-    console.log(response?.data.messages);
+    console.log(response);
 
     return (
         <div className="chat-body">
@@ -69,12 +69,11 @@ const ChannelDetail = ({ channel_list }) => {
                     {loading && <span>Cargando mensajes...</span>}
                     {error && <span>Error: {error}</span>}
                     {response && response.data && (
-                        <ul>
+                        <ul className="messages-list">
                             {response.data.messages.map((msg) => (
                                 user_id === msg.user._id
-                                    ? <li key={msg._id} className="mio">{msg.content}</li>
-                                    : <li key={msg._id} className="otro">{msg.content}</li>
-
+                                    ? <li key={msg._id} className="mio"><h5>{msg.user.name}:</h5> {msg.content} </li>
+                                    : <li key={msg._id} className="otro"><h5>{msg.user.name}:</h5> {msg.content} </li>
                             ))}
                         </ul>
                     )}

@@ -30,6 +30,9 @@
     width: max-content;
     align-self: flex-start;
 }
+.otro h5{
+    color: rgb(214, 214, 214);
+}
 
 .mio{
     background-color: #6e9d93;
@@ -42,6 +45,11 @@
     margin-left: auto;
     width: max-content;
     height: auto;
+    
+}
+.mio h5{
+    text-align: right;
+    color: rgb(214, 214, 214);
 }
 li{
     list-style: none;

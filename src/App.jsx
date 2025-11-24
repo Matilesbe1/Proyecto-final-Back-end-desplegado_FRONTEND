@@ -22,9 +22,8 @@ function App() {
         <Route element={<AuthMiddleware />} >
           <Route path='/home' element={<HomeScreen />} />
           <Route path='/workspace/:workspace_id' element={<WorkspaceScreen/>}/>
-          <Route path='/workspace/.workspace_id/invite' element={<InviteScreen/>}/>
           <Route path='/workspaces/:workspace_id/channels/:channel_id/messages' element={<ChatScreen/>}/>
-          <Route path='/createChannel' element={<InviteChannelForm/>}/>
+          <Route path='/workspaces/:workspace_id/channels' element={<InviteScreen/>}/>
         </Route>
       </Routes>
     </div>

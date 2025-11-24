@@ -25,7 +25,10 @@ const ChannelList = ({ channel_list }) => {
                         }
                     )
             }
-            <Link to={'/createChannel'}><button className='create-button'>Crear canal</button></Link>
+            <div className='create-button-container'>
+            <Link to={'/workspaces/' + workspace_id + '/channels'}><button className='create-button'>Crear canal</button></Link>
+
+            </div>
         </div>
     )
 }

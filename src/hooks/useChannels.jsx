@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
-import { createChannel, getChannelList } from "../services/channelService.js"
+import { createChannelByWorkspaceId, getChannelList } from "../services/channelService.js"
 import useFetch from "./useFetch.jsx"
 
 function useChannels (){
@@ -23,10 +23,10 @@ function useChannels (){
         )
     }
 
-    async function createChannel (form_state){
+    async function handlecreateChannel (form_state){
         sendRequest(
             async () => {
-                return createChannel(workspace_id, form_state.channel_name)
+                return createChannelByWorkspaceId(workspace_id, form_state.channel_name)
             }
         )
     }
@@ -53,7 +53,7 @@ function useChannels (){
         response,
         error,
         channels,
-        createChannel
+        handlecreateChannel
     }
 }
 

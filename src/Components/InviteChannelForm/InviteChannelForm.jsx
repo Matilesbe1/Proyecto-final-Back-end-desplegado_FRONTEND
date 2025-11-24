@@ -1,23 +1,29 @@
+import { useParams } from "react-router"
 import useChannels from "../../hooks/useChannels"
 import useForm from "../../hooks/useForm"
+import { createChannelByWorkspaceId } from "../../services/channelService"
 import "./InviteChannelForm.css"
 
+const InviteChannelForm = ({ onSubmit }) => {
+    const { workspace_id } = useParams()
+    const new_channel_form_fields = {
+        channel_name: 'channel_name'
+    }
+    const { channels, handlecreateChannel } = useChannels()
 
-const NEW_CHANNEL_FORM_FIELDS = {
-    CHANNEL_NAME: 'channel_name'
-}
-
-const InviteChannelForm = () => {
-    const { channels, createChannel } = useChannels()
     const initial_new_channel_state = {
-        [NEW_CHANNEL_FORM_FIELDS.CHANNEL_NAME]: ''
+        [new_channel_form_fields.channel_name]: ''  //esta vacio
     }
     const { form_state, onInputChange, handleSubmit } = useForm(
 
         initial_new_channel_state,
-        createChannel
+        onSubmit
 
     )
+    console.log(initial_new_channel_state);
+
+
+
     return (
         <div className="body-container">
             <form className="form" onSubmit={handleSubmit}>
@@ -29,10 +35,9 @@ const InviteChannelForm = () => {
                         id='channel_name'
                         name='channel_name'
                         onChange={onInputChange}
-                        value={form_state[NEW_CHANNEL_FORM_FIELDS.CHANNEL_NAME]}
+                        value={form_state[new_channel_form_fields.channel_name]}
                     /></span>
-                <input className="submit" type="submit" defaultValue="Crear" />
-
+                <input className="submit" type="submit" defaultValue="Crear"  onClick={() => window.location.href = `/workspace/${workspace_id}`} />
             </form>
         </div>
     )

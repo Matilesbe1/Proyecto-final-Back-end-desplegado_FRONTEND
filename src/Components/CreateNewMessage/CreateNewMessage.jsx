@@ -31,10 +31,11 @@ const CreateNewMessage = ({ onSubmit }) => {
                             id='content'
                             name='content'
                             onChange={onInputChange}
-                            value={form_state[new_message_form_field.content]} />
+                            value={form_state[new_message_form_field.content]}
+                            />
                         <i />
                     </div>
-                    <button type='submit' className='send-button'>
+                    <button type='submit' className='send-button' >
                         <div className="svg-wrapper-1">
                             <div className="svg-wrapper">
                                 <svg height={24} width={24} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
