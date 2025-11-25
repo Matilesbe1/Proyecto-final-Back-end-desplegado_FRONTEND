@@ -63,7 +63,7 @@ const ChannelDetail = ({ channel_list }) => {
 
     return (
         <div className="chat-body">
-            <h2>{ }</h2>
+            <a href={`/workspace/${workspace_id}`}><i class="bi bi-arrow-left"></i></a>
             <div className="chat-container">
                 <div style={{ padding: "20px" }}>
                     {loading && <span>Cargando mensajes...</span>}

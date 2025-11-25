@@ -25,6 +25,7 @@ const InviteChannelForm = ({ onSubmit }) => {
 
     return (
         <div className="body-container">
+            <a href={`/workspace/${workspace_id}`}><i class="bi bi-arrow-left arrow"></i></a>
             <form className="form" onSubmit={handleSubmit}>
                 <span className="input-span">
                     <label htmlFor="channel_name" className="label">Nombre del canal:</label>
@@ -36,7 +37,7 @@ const InviteChannelForm = ({ onSubmit }) => {
                         onChange={onInputChange}
                         value={form_state[new_channel_form_fields.channel_name]}
                     /></span>
-                <input className="submit" type="submit" defaultValue="Crear"  onClick={() => window.location.href = `/workspace/${workspace_id}`} />
+                <input className="submit" type="submit" defaultValue="Crear"  onClick={() => alert('canal creado con exito')}/>
             </form>
         </div>
     )

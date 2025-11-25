@@ -4,9 +4,9 @@
     position:sticky;
     bottom: 15px;
     color: white;
-    right: 50%;
-    transform: translateX(30%);
-    
+    right: 50vw;
+    width: 100vw;
+    justify-content: center;
 }
 
 .input{
@@ -146,4 +146,21 @@
     height: 25px;
     margin-right: 5px;
     transform: rotate(45deg);
+}
+
+
+@media (max-width: 650px) {
+    .inputbox {
+    max-width: 300px;
+    }
+}
+@media (max-width: 470px) {
+    .inputbox {
+    max-width: 190px;
+    }
+}
+@media (max-width: 400px) {
+    .inputbox {
+    max-width: 190px;
+    }
 }
