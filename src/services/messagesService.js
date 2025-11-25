@@ -38,7 +38,7 @@ async function getMessagesByChannelId(workspace_id, channel_id) {
         console.log(message);
         const body = {
             content: message,
-            sender_member_id: user_id
+            id: user_id
         }
 
         const response_http = await fetch(ENVIRONMENT.URL_API + `/api/workspaces/${workspace_id}/channels/${channel_id}/messages`,
