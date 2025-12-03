@@ -1,0 +1,16 @@
+
+.form input[name='name'] {
+    border-radius: 0.5rem;
+    padding: 1rem 0.75rem;
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--clr-alpha);
+    outline: 2px solid var(--bg-dark);
+}
+
+.form input[name='name']:focus {
+    outline: 2px solid var(--clr);
+}

@@ -40,6 +40,7 @@ const HomeScreen = () => {
           }
           </div>
       }
+      <Link to={'/workspace/crearWorkspace'}><button className='create-button'>Crear espacio de trabajo</button></Link>
     </div>
   )
 }

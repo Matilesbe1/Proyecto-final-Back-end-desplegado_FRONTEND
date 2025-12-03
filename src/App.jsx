@@ -9,6 +9,8 @@ import ChannelDetail from './Components/ChannelDetail/ChannelDetail'
 import InviteScreen from './Screens/InviteScreen/InviteScreen.jsx'
 import InviteChannelForm from './Components/InviteChannelForm/InviteChannelForm.jsx'
 import ChatScreen from './Screens/ChatScreen/ChatScreen.jsx'
+import CreateWorkspace from './Components/CreateWorkspaceForm/CreateWorkspaceForm.jsx'
+import WorkspaceCreateScreen from './Screens/WorkspaceCreate/WorkspaceCreateScreen.jsx'
 
 function App() {
 
@@ -24,6 +26,7 @@ function App() {
           <Route path='/workspace/:workspace_id' element={<WorkspaceScreen/>}/>
           <Route path='/workspaces/:workspace_id/channels/:channel_id/messages' element={<ChatScreen/>}/>
           <Route path='/workspaces/:workspace_id/channels' element={<InviteScreen/>}/>
+          <Route path='/workspace/crearWorkspace' element={<WorkspaceCreateScreen/>}></Route>
         </Route>
       </Routes>
     </div>
